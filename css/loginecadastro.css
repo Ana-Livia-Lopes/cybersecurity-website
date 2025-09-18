@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    height: 100vh;
+    background: url('../img/login-fundo.jpg') no-repeat center center;
+    background-size: cover;
+    
+}
+#secao-login {
+    display: flex;
+    margin-left: 20%;
+    width: 485px;
+    overflow: hidden;
+}
+#box-login {
+    border-radius: 9px;
+    box-shadow: rgba(255, 255, 255, 0.3) 0px 19px 38px, rgba(255, 255, 255, 0.22) 0px 15px 12px;
+    margin-top: 120px;
+    height: 510px;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#box-login {
+    background-color: #dde8f1;
+}
+#box-login h1 {
+    font-size: 36.5px;
+    color: #0e3960;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 40px;
+}
+#box-login p{
+    text-align: center;
+    margin-top: 8px;
+    font-size: 18px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    
+}
+#box-login label {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: left;
+    color: #0e3960;
+    margin: 10px 0 5px;
+}
+.inserir {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 2px solid #a3a2a2;
+    font-size: 16px;
+    background-color: #ffffff00;
+    color: black;
+}
+#entrar {
+    background-color: #dde8f1;
+    border: none;
+    border-radius: 20px;
+    padding: 14px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 230px;
+    margin-top: 40px;
+    margin-bottom: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+}
+#entrar{
+    background-color: #0e3960;
+    color: white;
+}
+#entrar:hover{
+    background-color: #dde8f1;
+    color: #0e3960;
+}
+
+/* cadastrar */
+.secao-cadastro {
+    float: left;
+    width: 650px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-left: 8%;
+    margin-top: 30px;
+    box-shadow: rgba(255, 255, 255, 0.3) 0px 19px 38px, rgba(255, 255, 255, 0.22) 0px 15px 12px;
+}
+
+.box-cadastro {
+    height: 570px;
+    padding: 45px;
+    background-color: #0e3960;
+    color: white;
+}
+
+.box-cadastro h1 {
+    font-size: 43.7px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.box-cadastro label {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: left;
+    color: white;
+    margin: 10px 0 5px;
+}
+.box-cadastro .inserir{
+    color: white;
+}
+#botao-cadastrar {
+    background-color: #dde8f1;
+    color: #0e3960;
+    border: none;
+    border-radius: 20px;
+    padding: 14px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 230px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+}
+#botao-cadastrar a{
+    text-decoration: none;
+    color: white;
+}
+#botao-cadastrar:hover{
+    background-color: #0e3960;
+    color: white;
+}
+.box-cadastro p{
+    text-align: center;
+}
+.celular{
+    font-weight: 400;
+    color: #313131;
+}
+.celular a{
+    font-weight: bold;
+    color: #0e3960;
+}
+#mostrar{
+    color: #0e3960;
+}
+#mostrar2{
+    color: #dde8f1;
+}
+.celular2{
+    font-size: 18px;
+}
+.celular2 a{
+    color: white;
+    font-weight: bold;
+}
+@media (max-width: 768px){
+    #entre{
+        color: #313131;
+    }
+    body {
+        padding: 10px;
+    }
+    #secao-login, .secao-cadastro {
+        flex-direction: column;
+        width: 90%;
+        max-width: 100%;
+    }
+    .secao-cadastro{
+        margin-left: 5%;
+        margin-top: 12%;
+    }
+    #box-login, .box-cadastro {
+        width: 100%;
+        padding: 30px;
+        height: auto;
+    }
+    #box-login h1, .box-cadastro h1 {
+        font-size: 2rem;
+    }
+    #box-login p, .box-cadastro p {
+        font-size: 1rem;
+    }
+    #entrar, #cadastrar-button, #botao-cadastrar, #botao-entrar {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+}
+
+
+

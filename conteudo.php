@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CTF.css">
+
+</head>
+
+<body>
+
+ 
+        <div class="blocos">
+        <img src="img/ana.JPG" alt="">
+        <p>nome1</p>
+        <a href="exer1/form.php"><button>Exercício 1</button></a>
+    </div>
+    <div class="blocos">
+        <img src="img/gabs.JPG" alt="">
+        <p>nome2</p>
+        <a href="exer2/feedback.php"><button>Exercício 2</button></a>
+    </div>
+    <div class="blocos">
+        <img src="img/isa.JPG" alt="" class="pessoa">
+        <p>nome3</p>
+        <a href="exer3/reserva.php"><button>Exercício 3</button></a>
+    </div>
+
+
+</body>
+</html>
+
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(236, 236, 236);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+}
+
+.blocos{
+    background-color: rgb(253, 223, 115);
+    border-radius: 10px;
+    width: 350px;
+    height: 420px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s;
+    box-shadow: rgb(207, 180, 81) 0px 0px 0px 3px inset, rgb(255, 255, 255) 10px -10px 0px -3px, rgb(154, 154, 154) 10px -10px, rgb(255, 255, 255) 20px -20px 0px -3px, rgb(154, 154, 154) 20px -20px, rgb(223, 196, 101) 30px -30px 0px -3px, rgb(189, 164, 74) 30px -30px;
+}
+
+img{
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    margin-top: 30px;
+}
+
+p{
+    font-size: 20px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: rgb(100, 100, 100);
+}
+
+button{
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    width: 110px;
+    height: 40px;
+    margin-bottom: 30px;
+    background-color: rgb(211, 188, 103);
+    border: 3px solid rgb(165, 148, 84);
+    border-radius: 7px;
+    color: rgb(70, 70, 70);
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: rgb(222, 198, 112);
+    color: rgb(101, 101, 101);
+    border: 3px solid rgb(185, 165, 94);
+}
+
+ .blocos:hover{
+    transform: scale(1.06);
+}
+</style>
