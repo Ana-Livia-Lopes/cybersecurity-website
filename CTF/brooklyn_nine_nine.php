@@ -337,7 +337,7 @@
             </a>
             
             <div class="image-container">
-                <img src="../img/code.jpg" alt="Imagem de código relacionado ao CTF">
+                <img src="../img/b1.png" alt="Imagem de código relacionado ao CTF">
                 <div class="image-caption">Exemplo de código e técnicas de exploração</div>
             </div>
         </section>
@@ -356,7 +356,17 @@
                 </div>
                 
                 <div class="image-container">
-                    <img src="../img/almoco.jpg" alt="Resultado do escaneamento de portas">
+                    <img src="../img/b2.png" alt="Resultado do escaneamento de portas">
+                    <div class="image-caption">Resultado do comando nmap mostrando portas abertas</div>
+                </div>
+                <div class="step-header">
+                    <h3>Procura de diretórios</h3>
+                </div>
+                <div class="code">
+                    gobuster dir -u http://&lt;TARGET_IP&gt; -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+                </div>
+                <div class="image-container">
+                    <img src="../img/b3.png" alt="Resultado do escaneamento de portas">
                     <div class="image-caption">Resultado do comando nmap mostrando portas abertas</div>
                 </div>
             </div>
@@ -374,30 +384,41 @@
                 </div>
                 
                 <div class="image-container">
-                    <img src="../img/code.jpg" alt="Conexão FTP bem-sucedida">
+                    <img src="../img/b4.png" alt="Conexão FTP bem-sucedida">
                     <div class="image-caption">Conexão FTP bem-sucedida com acesso anonymous</div>
+                </div>
+                <div class="step-header">
+                    <h3>Hydra no usuario Jake</h3>
+                </div>
+                <div class="code">
+                    hydra -l jake -P /usr/share/wordlists/rockyou.txt ftp://&lt;TARGET_IP&gt;
+                </div>
+                <div class="image-container">
+                    <img src="../img/b5.png" alt="Resultado do escaneamento de portas">
+                    <div class="image-caption">Resultado do comando nmap mostrando portas abertas</div>
                 </div>
             </div>
         </section>
         
         <section class="section">
             <h2>Exploração e Busca por Flags</h2>
-            
             <div class="step">
                 <div class="step-header">
                     <div class="step-number">3</div>
-                    <h3>Navegação no FTP</h3>
+                    <h3>ssh no usuario Jake</h3>
                 </div>
-                <p>Após conectar via FTP, navegue pelos diretórios e procure por arquivos interessantes:</p>
+                <p>Após conectar via SSH, navegue pelos diretórios e procure por arquivos interessantes:</p>
                 <div class="code">
-                    ls -la<br>
-                    cd [diretórios]<br>
-                    get [arquivos]
+                    ssh jake@&lt;TARGET_IP&gt;<br>
                 </div>
                 <p>Procurar entre pastas até achar arquivos contendo flags ou informações sensíveis.</p>
                 
                 <div class="image-container">
-                    <img src="../img/code.jpg" alt="Listagem de diretórios FTP">
+                    <img src="../img/b6.png" alt="Listagem de diretórios FTP">
+                    <div class="image-caption">Listagem de diretórios no servidor FTP</div>
+                </div>
+                <div class="image-container">
+                    <img src="../img/b7.png" alt="Listagem de diretórios FTP">
                     <div class="image-caption">Listagem de diretórios no servidor FTP</div>
                 </div>
             </div>
@@ -414,7 +435,7 @@
                 <p>O comando <code>sudo –l</code> mostra os comandos que um usuário pode executar com sudo sem saber a senha.</p>
                 
                 <div class="image-container">
-                    <img src="../img/code.jpg" alt="Resultado do comando sudo -l">
+                    <img src="../img/b8.png" alt="Resultado do comando sudo -l">
                     <div class="image-caption">Resultado do comando sudo -l mostrando comandos permitidos</div>
                 </div>
             </div>
@@ -435,7 +456,7 @@
                 <p>Procure por sudo com less que era um dos comandos disponíveis.</p>
                 
                 <div class="image-container">
-                    <img src="../img/code.jpg" alt="Página do GTFOBins para o comando less">
+                    <img src="../img/b9.png" alt="Página do GTFOBins para o comando less">
                     <div class="image-caption">Página do GTFOBins mostrando exploração do comando less</div>
                 </div>
             </div>
@@ -452,7 +473,7 @@
                 <p>Dentro do less, insira o comando <code>!/bin/sh</code> para obter um shell com privilégios elevados.</p>
                 
                 <div class="image-container">
-                    <img src="../img/code.jpg" alt="Exploração do comando less">
+                    <img src="../img/b10.png" alt="Exploração do comando less">
                     <div class="image-caption">Exploração do comando less para obter shell root</div>
                 </div>
             </div>
@@ -470,31 +491,9 @@
                 <p>Sai e procure a última flag.</p>
                 
                 <div class="image-container">
-                    <img src="../img/code.jpg" alt="Flag final encontrada">
+                    <img src="../img/b11.png" alt="Flag final encontrada">
                     <div class="image-caption">Flag final encontrada no diretório /root/</div>
                 </div>
-            </div>
-        </section>
-        
-        <section class="section">
-            <h2>Comandos Úteis</h2>
-            
-            <div class="code">
-                # Conexão FTP<br>
-                ftp &lt;IP&gt;<br>
-                Name: anonymous<br>
-                Password: [vazio ou anonymous]<br><br>
-                
-                # Verificar privilégios sudo<br>
-                sudo -l<br><br>
-                
-                # Explorar comando less para escalação<br>
-                sudo less /etc/profile<br>
-                !/bin/sh<br><br>
-                
-                # Procurar flags<br>
-                find / -name "*flag*" -o -name "*.txt" 2>/dev/null<br>
-                find / -user root -name "*.txt" 2>/dev/null
             </div>
         </section>
         
@@ -509,22 +508,16 @@
                 </tr>
                 <tr>
                     <td>Flag 1</td>
-                    <td>Serviço FTP</td>
-                    <td>Acesso anonymous e navegação</td>
+                    <td>Serviço SSH</td>
+                    <td>Acesso Jake</td>
                 </tr>
                 <tr>
-                    <td>Flag 2</td>
-                    <td>Diretório do usuário</td>
-                    <td>Exploração do sistema</td>
-                </tr>
-                <tr>
-                    <td>Flag 3 (root)</td>
+                    <td>Flag 2 (root)</td>
                     <td>/root/</td>
                     <td>Escalação de privilégios via sudo</td>
                 </tr>
             </table>
         </section>
-        
         <footer>
             <p>Walkthrough educativo da sala Brooklyn Nine Nine do TryHackMe | CTF e Pentesting</p>
         </footer>
