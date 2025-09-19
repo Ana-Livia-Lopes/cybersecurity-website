@@ -213,6 +213,7 @@
     </style>
 </head>
 <body>
+    <a href="../conteudo.php"><?php include('../seta.php'); ?></a>
     <div class="container">
         <header>
             <h1>BURP SUITE</h1>

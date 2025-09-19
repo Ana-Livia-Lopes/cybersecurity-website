@@ -18,9 +18,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <?php include 'nav.php'; ?>
+    <?php include 'nav.php';
+    ?>
 <main class="main-content">
     <section id="secao1">
     <div class="logo-container">
@@ -62,7 +64,7 @@
             <div class="recurso card"  id="quinto">
                 <i class="fa-solid fa-unlock"></i>
                 <div class="info">
-                    <p>wireshark</p>
+                    <p>Explicações</p>
                 </div>
             </div>
         </div>
@@ -70,42 +72,22 @@
     </section>
     
     <footer>
+        <hr>
             <div id="footer">
-        
                 <div class="contato">
-                    <h2>Informações</h2>
-                    <p><strong>Desenvolvido por:</strong></p>
+                    <h2>Desenvolvido por:</h2>
                     <p>Ana Lívia dos Santos Lopes</p>
             
-                    <p><strong>Atividade do:</strong></p>
-                    <p>Treinamentos para SP Skills</p>
                 </div> 
             
                 <div class="equipe">
-                    <h2>Equipe Desenvolvedora</h2>
+                    <h2>Atividade de:</h2>
                     <ul>
-                        <p>Ana Lívia dos Santos Lopes</p>
-                        <li><a href="https://linktr.ee/analivialopess" target="_blank">Link para contato</a></li>
-            
-                        <p>Gabriel Reis de Brito</p>
-                        <li><a href="https://linktr.ee/gabrielreiss" target="_blank">Link para contato</a></li>
-            
-                        <p>Isadora Gomes da Silva</p>
-                        <li><a href="https://linktr.ee/isadoragomess" target="_blank">Link para contato</a></li>
-            
-                        <p>Lucas Randal Abreu Balderrama</p>
-                        <li><a href="https://linktr.ee/lucasbalderrama" target="_blank">Link para contato</a></li>
-                    </ul>
+                        <p>Treinamentos para SP Skills</p>
                 </div>
-            
-                <div class="links-adicionais">
-                    <h2>Links Adicionais</h2>
-                    <ul>
-                        <li><a href="termos.php" target="_blank">Termos de Uso</a></li>
-                        <li><a href="privacidade.php" target="_blank">Política de Privacidade</a></li>
-                    </ul>
-                </div>
+
             </div>
+            <hr>
         </footer> 
 </main>
 </body>

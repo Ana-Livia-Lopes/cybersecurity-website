@@ -206,6 +206,7 @@
     </style>
 </head>
 <body>
+    <a href="./index.php"><?php include('seta.php'); ?></a>
     <div class="container">
         <header>
             <h1>WRITEUPS</h1>
@@ -225,7 +226,7 @@
             <div class="cards-container">
                 <a href="./CTF/brooklyn_nine_nine.php" class="card">
                     <div class="card-icon">
-                        <i class="fas fa-police-box"></i>
+                        <i class="fa-solid fa-unlock"></i>
                     </div>
                     <h3>Brooklyn Nine Nine</h3>
                     <div class="card-content">
@@ -383,6 +384,25 @@
                         <p>Desafios variados do PicoCTF, ideal para iniciantes. Abrange desde conceitos básicos até técnicas intermediárias de hacking.</p>
                     </div>
                     <div class="card-button">Acessar Writeup</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="platform-section">
+            <h2 class="platform-title">
+                <i class="fas fa-flag platform-icon"></i>
+                Ferramentas
+            </h2>
+            <div class="cards-container">
+                <a href="./CTF/ferramentas.php" class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-flag-checkered"></i>
+                    </div>
+                    <h3>Ferramentas</h3>
+                    <div class="card-content">
+                        <p>Descrição e exemplos sobre varias ferramentas que podem ser utilizadas em um teste de penetração </p>
+                    </div>
+                    <div class="card-button">Acessar Documento</div>
                 </a>
             </div>
         </div>

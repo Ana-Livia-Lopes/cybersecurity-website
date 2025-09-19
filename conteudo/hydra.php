@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Volatility - Análise Forense de Memória</title>
+    <title>Hydra - Ferramenta de Força Bruta</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -251,15 +251,15 @@
     <a href="../CTF.php"><?php include('../seta.php'); ?></a>
     <div class="container">
         <header>
-            <h1>VOLATILITY</h1>
-            <p class="subtitle">Ferramenta de análise forense de memória RAM</p>
+            <h1>HYDRA</h1>
+            <p class="subtitle">Ferramenta de ataque de força bruta de rede</p>
         </header>
         
         <section class="intro">
-            <h2>O que é o Volatility?</h2>
-            <p>O Volatility é uma ferramenta gratuita de análise forense de memória que forma uma estrutura para extrair artefatos digitais de amostras de memória RAM. A ferramenta é construída a partir de vários plugins trabalhando em conjunto para obter informações do dump de memória.</p>
-            <p>Para começar a analisar um dump, você precisa primeiro identificar o tipo de imagem. A extração de um dump de memória pode ser realizada de diversas maneiras: FTK Imager, Linha Vermelha, Dumpit.exe, wins2dd.exe / wind4dd.exe, Memóriaze, FastDump.</p>
-            <p>No Volatility 3, você precisa especificar o sistema operacional antes de especificar o plugin a ser usado, por exemplo: windows.info e linux.info.</p>
+            <h2>O que é o Hydra?</h2>
+            <p>O Hydra é uma ferramenta de ataque de força bruta que suporta vários protocolos de rede. Ele é usado para realizar ataques de dicionário contra serviços de login, ajudando a testar a segurança de sistemas.</p>
+            <p>O Hydra pode realizar ataques rápidos de dicionário contra mais de 50 protocolos, incluindo telnet, FTP, HTTP, HTTPS, SMB, bancos de dados e muito mais.</p>
+            <p>É uma ferramenta de linha de comando que permite automação e scripting para testes de penetração.</p>
         </section>
         
         <h2>Conceitos Importantes</h2>
@@ -267,239 +267,231 @@
             <div class="card">
                 <div class="card-header">
                     <div class="card-icon">
-                        <i class="fas fa-memory"></i>
+                        <i class="fas fa-key"></i>
                     </div>
-                    <h3>Dump de Memória</h3>
+                    <h3>Força Bruta</h3>
                 </div>
                 <div class="card-content">
-                    <p>É uma cópia da RAM num determinado momento, usada para análise, investigação de problemas ou forense digital.</p>
+                    <p>Método de tentativa e erro usado para descobrir informações como senhas ou chaves de criptografia.</p>
                 </div>
             </div>
             
             <div class="card">
                 <div class="card-header">
                     <div class="card-icon">
-                        <i class="fas fa-user-cog"></i>
+                        <i class="fas fa-book"></i>
                     </div>
-                    <h3>Perfil (Profile)</h3>
+                    <h3>Ataque de Dicionário</h3>
                 </div>
                 <div class="card-content">
-                    <p>Configuração que diz ao Volatility como entender a memória do sistema de onde veio a imagem, pois cada versão do Linux organiza a memória de um jeito diferente.</p>
+                    <p>Técnica que usa uma lista de palavras (dicionário) para tentar adivinhar credenciais de acesso.</p>
                 </div>
             </div>
             
             <div class="card">
                 <div class="card-header">
                     <div class="card-icon">
-                        <i class="fas fa-cube"></i>
+                        <i class="fas fa-network-wired"></i>
                     </div>
-                    <h3>DLL</h3>
+                    <h3>Protocolos Suportados</h3>
                 </div>
                 <div class="card-content">
-                    <p>Biblioteca de código que pode ser usada por múltiplos programas ao mesmo tempo, especialmente em sistemas Windows.</p>
+                    <p>Hydra suporta mais de 50 protocolos diferentes, incluindo HTTP, FTP, SSH, Telnet, SMTP, etc.</p>
                 </div>
             </div>
             
             <div class="card">
                 <div class="card-header">
                     <div class="card-icon">
-                        <i class="fas fa-list-ol"></i>
+                        <i class="fas fa-tachometer-alt"></i>
                     </div>
-                    <h3>PID</h3>
+                    <h3>Paralelismo</h3>
                 </div>
                 <div class="card-content">
-                    <p>ID de cada processo em execução no sistema operacional.</p>
+                    <p>O Hydra pode realizar múltiplas tentativas de login simultaneamente, acelerando o processo de força bruta.</p>
                 </div>
             </div>
             
             <div class="card">
                 <div class="card-header">
                     <div class="card-icon">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-user-secret"></i>
                     </div>
-                    <h3>Offset</h3>
+                    <h3>Credenciais</h3>
                 </div>
                 <div class="card-content">
-                    <p>Endereço de deslocamento onde no processo o código foi colocado.</p>
+                    <p>Combinações de nome de usuário e senha que o Hydra tenta usar para obter acesso a um serviço.</p>
                 </div>
             </div>
             
             <div class="card">
                 <div class="card-header">
                     <div class="card-icon">
-                        <i class="fas fa-database"></i>
+                        <i class="fas fa-exclamation-triangle"></i>
                     </div>
-                    <h3>Heap</h3>
+                    <h3>Mensagem de Erro</h3>
                 </div>
                 <div class="card-content">
-                    <p>Região da memória onde programas armazenam dados temporários e dinâmicos enquanto estão em execução.</p>
+                    <p>Texto que identifica uma tentativa de login malsucedida, usado pelo Hydra para detectar falhas.</p>
                 </div>
             </div>
         </div>
         
         <section class="section">
-            <h2>Instalação do Volatility</h2>
+            <h2>Instalação do Hydra</h2>
             
             <ol>
-                <li>Baixar o ZIP na VM: <a href="https://github.com/volatilityfoundation/volatility3/releases/tag/v1.0.1" target="_blank">https://github.com/volatilityfoundation/volatility3</a></li>
-                <li>Extrair do ZIP: <code>unzip nomeDoArquivo.zip</code></li>
-                <li>Entrar no diretório: <code>cd nomeDoArquivo</code></li>
-                <li>Instalar dependências: 
+                <li>No Debian/Ubuntu:
                     <div class="code">
                         sudo apt update<br>
-                        sudo apt install python3 python3-pip<br>
-                        pip3 install yara-python capstone
+                        sudo apt install hydra
                     </div>
                 </li>
-                <li>Verificar instalação: <code>python3 vol.py -h</code></li>
+                <li>No Kali Linux (já vem pré-instalado):
+                    <div class="code">
+                        # Verificar instalação<br>
+                        hydra
+                    </div>
+                </li>
+
             </ol>
         </section>
         
         <section class="section">
-            <h2>Plugins do Volatility</h2>
+            <h2>Como Usar o Hydra</h2>
             
-            <table>
-                <tr>
-                    <th>Plugin</th>
-                    <th>Descrição</th>
-                </tr>
-                <tr>
-                    <td><strong>ImageInfo</strong></td>
-                    <td>Analisa o dump de memória e atribui uma lista dos melhores perfis de sistema operacional possíveis.</td>
-                </tr>
-                <tr>
-                    <td><strong>windows.info, linux.info, mac.info</strong></td>
-                    <td>Fornecem informações sobre o host a partir do despejo de memória.</td>
-                </tr>
-                <tr>
-                    <td><strong>PsList</strong></td>
-                    <td>Lista processos da lista duplamente encadeada que rastreia processos na memória (similar ao Gerenciador de Tarefas).</td>
-                </tr>
-                <tr>
-                    <td><strong>PsScan</strong></td>
-                    <td>Lista processos que correspondem a _EPROCESS (útil para detectar processos ocultos).</td>
-                </tr>
-                <tr>
-                    <td><strong>PsTree</strong></td>
-                    <td>Lista processos com base no ID do processo pai, mostrando relações hierárquicas.</td>
-                </tr>
-                <tr>
-                    <td><strong>NetStat</strong></td>
-                    <td>Identifica conexões de network presentes no momento da extração na máquina host.</td>
-                </tr>
-                <tr>
-                    <td><strong>DllList</strong></td>
-                    <td>Lista todas as DLLs associadas aos processos no momento da extração.</td>
-                </tr>
-                <tr>
-                    <td><strong>Malfind</strong></td>
-                    <td>Detecta injeção de código identificando processos com permissão executável mas sem arquivo mapeado.</td>
-                </tr>
-                <tr>
-                    <td><strong>YaraScan</strong></td>
-                    <td>Identifica malware buscando strings, padrões e regras compostas.</td>
-                </tr>
-                <tr>
-                    <td><strong>SSDT</strong></td>
-                    <td>Procura por hooking na Tabela de Descritores de Serviços do Sistema.</td>
-                </tr>
-                <tr>
-                    <td><strong>Modules</strong></td>
-                    <td>Exibe lista de módulos do kernel carregados (útil para identificar malware ativo).</td>
-                </tr>
-                <tr>
-                    <td><strong>DriverScan</strong></td>
-                    <td>Verifica drivers presentes no sistema (pode detectar drivers ocultos).</td>
-                </tr>
-                <tr>
-                    <td><strong>Handles</strong></td>
-                    <td>Lista todos os objetos abertos por processos no Windows (arquivos, mutexes, eventos, etc.).</td>
-                </tr>
-            </table>
+            <p>O Hydra é uma ferramenta de linha de comando que realiza ataques de força bruta contra serviços de rede. A sintaxe básica é:</p>
+            
+            <div class="code">
+                hydra -l &lt;usuário&gt; -P &lt;wordlist&gt; &lt;protocolo&gt;://&lt;IP&gt;
+            </div>
+            
+            <p>Para formulários web (HTTP POST), a sintaxe é mais complexa:</p>
+            
+            <div class="code">
+                hydra -l &lt;usuário&gt; -P &lt;wordlist&gt; &lt;IP&gt; http-post-form "<br>  &lt;caminho&gt;:&lt;user e pass&gt;:&lt;mensagem de erro&gt;"
+            </div>
+            
+            <h3>Exemplo:</h3>
+            <div class="code">
+                hydra -l admin -P /usr/share/wordlists/rockyou.txt 10.10.234.73<br>
+                http-post-form "/admin/index.php:user=^USER^&pass=^PASS^:Username or password invalid"
+            </div>
+            
+            <p>onde encontrar as informações:</p>
+            <p>para o http-post-form, aí coloca o diretório que vc esta, aí no inspecionar em network, se vc for em request aparece como o arquivo foi tipo:</p>
+            <img src="../img/hydra.png" alt="">
+            <p>Então vc precisa usar isso na próxima parte usando tipo: user=^USER^, a parte em maiúsculo se mantem, mas a outra tem que ser de acordo com o que aparece na requisição do site. Aí depois só tem que colocara mensagem de erro que aparece quando o usuário ou senha é invalido, isso entre aspas.</p>
         </section>
         
         <section class="section">
-            <h2>Sintaxes dos Plugins</h2>
+            <h2>Parâmetros Comuns do Hydra</h2>
             
-            <div class="code">
-                # Windows.info<br>
-                python3 vol.py -f &lt;file&gt; windows.info<br><br>
-                
-                # PsList<br>
-                python3 vol.py -f &lt;file&gt; windows.pslist<br><br>
-                
-                # PsScan<br>
-                python3 vol.py -f &lt;file&gt; windows.psscan<br><br>
-                
-                # PsTree<br>
-                python3 vol.py -f &lt;file&gt; windows.pstree<br><br>
-                
-                # NetStat<br>
-                python3 vol.py -f &lt;file&gt; windows.netstat<br><br>
-                
-                # DllList<br>
-                python3 vol.py -f &lt;file&gt; windows.dlllist<br><br>
-                
-                # Malfind<br>
-                python3 vol.py -f &lt;file&gt; windows.malfind<br><br>
-                
-                # YaraScan<br>
-                python3 vol.py -f &lt;file&gt; windows.yarascan<br><br>
-                
-                # SSDT<br>
-                python3 vol.py -f &lt;file&gt; windows.ssdt<br><br>
-                
-                # Modules<br>
-                python3 vol.py -f &lt;file&gt; windows.modules<br><br>
-                
-                # DriverScan<br>
-                python3 vol.py -f &lt;file&gt; windows.driverscan
-            </div>
+            <table>
+                <tr>
+                    <th>Parâmetro</th>
+                    <th>Descrição</th>
+                </tr>
+                <tr>
+                    <td><strong>-l</strong></td>
+                    <td>Especifica um nome de usuário específico para o teste</td>
+                </tr>
+                <tr>
+                    <td><strong>-L</strong></td>
+                    <td>Especifica um arquivo com uma lista de usuários</td>
+                </tr>
+                <tr>
+                    <td><strong>-p</strong></td>
+                    <td>Especifica uma senha específica para o teste</td>
+                </tr>
+                <tr>
+                    <td><strong>-P</strong></td>
+                    <td>Especifica um arquivo com uma lista de senhas (wordlist)</td>
+                </tr>
+                <tr>
+                    <td><strong>-s</strong></td>
+                    <td>Especifica uma porta diferente da padrão do protocolo</td>
+                </tr>
+                <tr>
+                    <td><strong>-t</strong></td>
+                    <td>Define o número de tarefas paralelas (padrão: 16)</td>
+                </tr>
+                <tr>
+                    <td><strong>-v / -V</strong></td>
+                    <td>Modo verboso / muito verboso para mostrar mais detalhes</td>
+                </tr>
+                <tr>
+                    <td><strong>-f</strong></td>
+                    <td>Para de tentar quando encontra uma credencial válida</td>
+                </tr>
+                <tr>
+                    <td><strong>-w</strong></td>
+                    <td>Define o tempo de espera entre tentativas (em segundos)</td>
+                </tr>
+                <tr>
+                    <td><strong>-u</strong></td>
+                    <td>Faz loop em usuários, não em senhas (útil quando há bloqueio por tentativas)</td>
+                </tr>
+            </table>
         </section>
         
         <section class="section">
             <h2>Exemplos de Comandos</h2>
             
             <div class="code">
-                # Identificar informações do sistema<br>
-                vol -f /Scenarios/investigations/investigation-1.vmem windows.info<br><br>
+                # Ataque SSH com usuário específico e wordlist<br>
+                hydra -l admin -P /usr/share/wordlists/rockyou.txt ssh://192.168.1.100<br><br>
                 
-                # Listar processos<br>
-                vol -f /Scenarios/investigations/investigation-1.vmem windows.psscan<br><br>
+                # Ataque FTP com lista de usuários e senha específica<br>
+                hydra -L users.txt -p password123 ftp://192.168.1.100<br><br>
                 
-                # Mostrar árvore de processos<br>
-                vol -f /Scenarios/investigations/investigation-1.vmem windows.pstree<br><br>
+                # Ataque HTTP POST em formulário web<br>
+                hydra -l admin -P passwords.txt 192.168.1.100<br>
+                http-post-form "/login.php:username=^USER^&password=^PASS^:Invalid credentials"<br><br>
                 
-                # Criar dump de memória de um processo específico<br>
-                vol -f /Scenarios/investigations/investigation-1.vmem windows.memmap.Memmap --pid 1640 -dump<br><br>
+                # Ataque SMTP com verboSE<br>
+                hydra -l user -P passlist.txt smtp://192.168.1.100 -V<br><br>
                 
-                # Buscar user-agent no dump<br>
-                vol -f /Scenarios/investigations/investigation-1.vmem -o /tmp windows.memmap.Memmap --pid 1640 -dump<br>
-                strings /tmp/pid.1640.dmp | grep -i "user-agent"<br><br>
-                
-                # Listar DLLs e filtrar<br>
-                vol -f /Scenarios/investigations/investigation-2.raw windows.dlllist | grep "740"<br><br>
-                
-                # Executar a partir do diretório de instalação<br>
-                cd /opt/volatility3<br>
-                python3 vol.py -f /Scenarios/investigations/investigation-1.vmem windows.info
+                # Ataque RDP com limite de tarefas paralelas<br>
+                hydra -L users.txt -P passwords.txt rdp://192.168.1.100 -t 4
             </div>
         </section>
         
         <section class="section">
-            <h2>Métodos de Evasão (Hooking)</h2>
+            <h2>Wordlists Comuns</h2>
+            
+            <p>O sucesso de um ataque de força bruta depende muito da qualidade da wordlist utilizada. Algumas wordlists populares:</p>
             
             <ul>
-                <li><strong>Ganchos SSDT</strong> - Hook na Tabela de Descritores de Serviços do Sistema</li>
-                <li><strong>Ganchos IRP</strong> - Hook em Rotinas de Pacotes de Requisição de E/S</li>
-                <li><strong>Ganchos IAT</strong> - Hook na Tabela de Endereços de Importação</li>
-                <li><strong>Ganchos EAT</strong> - Hook na Tabela de Endereços de Exportação</li>
-                <li><strong>Ganchos em Linha</strong> - Modificação direta do código da função</li>
+                <li><strong>rockyou.txt</strong> - Wordlist muito popular incluída no Kali Linux</li>
+                <li><strong>SecLists</strong> - Coleção abrangente de listas de segurança</li>
+                <li><strong>CeWL</strong> - Ferramenta para gerar wordlists personalizadas a partir de sites</li>
+                <li><strong>Crunch</strong> - Gerador de wordlists personalizadas com padrões específicos</li>
             </ul>
+            
+            <div class="highlight">
+                <p><strong>Dica:</strong> Sempre use wordlists apropriadas para o contexto do teste. Wordlists em idioma local ou específicas do alvo tendem a ser mais eficazes.</p>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>Considerações Éticas e Legais</h2>
+            
+            <ul>
+                <li>O Hydra deve ser usado apenas em sistemas que você possui ou tem permissão explícita para testar</li>
+                <li>Ataques de força bruta sem autorização são ilegais na maioria dos países</li>
+                <li>Sempre obtenha autorização por escrito antes de realizar testes de penetração</li>
+                <li>Esteja ciente de políticas de bloqueio de contas após múltiplas tentativas falhas</li>
+                <li>Considere o impacto de seus testes na disponibilidade dos sistemas</li>
+            </ul>
+            
+            <div class="highlight">
+                <p>Conforme mencionado na saída do Hydra: "Please do not use in military or secret service organizations, or for illegal purposes."</p>
+            </div>
         </section>
         
         <footer>
-            <p>Material educativo para análise forense digital e investigação de segurança | Volatility Framework</p>
+            <p>Material educativo para testes de penetração e segurança ofensiva | Hydra THC Tool</p>
         </footer>
     </div>
 </body>

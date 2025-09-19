@@ -322,6 +322,7 @@
     </style>
 </head>
 <body>
+    <a href="../CTF.php"><?php include('../seta.php'); ?></a>
     <div class="container">
         <header>
             <h1>EASY PEASY</h1>

@@ -365,6 +365,7 @@
     </style>
 </head>
 <body>
+    <a href="../CTF.php"><?php include('../seta.php'); ?></a>
     <div class="container">
         <header>
             <h1>COMANDOS LINKED</h1>
@@ -415,7 +416,11 @@
                     </div>
                     <h2 class="tool-title">NetExec (NXC)</h2>
                 </div>
-                <p>Ferramenta para testar protocolos de rede, como SMB - protocolo para compartilhar arquivos, pastas e impressoras em rede.</p>
+                <p>NetExec serve para testar protocolos de rede, como SMB que é um protocolo para compartilhar arquivos, pastas e impressoras em rede.
+                ele pode executar comandos remotamente em máquinas Windows tipo um ssh
+                Para isso você fornece: IP do alvo, Usuário, senha eComando que quer executar
+                no comando ele tenta logar com usuário vazio e senha vazia (login anônimo)
+                ai resulta em</p>
                 
                 <div class="code">
                     nxc smb 172.16.4.186 -u " " -p " "
@@ -494,7 +499,10 @@
                 
                 <div class="highlight">
                     <strong>Resultado obtido:</strong> Hash TGT do usuário<br>
-                    bbaf076d6b9aa346d857f8e292e85c33539a6fe7f193f01ff0721ee097ff6850cfd6dcef6ed7c89a0e4c7ba780aa8e98c2540f58d81e54ed66ff00c6fdcff21
+                    bba107dd6b9aa346d85718e292e85c33$39a6fe71193f011f0721ee097f16850cfd6dce16ed7c89a0e4c7ba780aa8e98c2540f58d81e54ed66ff09c6fdcff21060f0980141<br>
+                    079ad58a75f78612723155f37712f25e177ca47fe1bc57b71057a3cd8887d400da19218ef222bc545ab97e416ec59824400dd35b35aa30e104831e2c00b5af0b9db8759861<br>
+                    82242947bc158ab2251b5e88820d9631a957ebe05e703752810712852ffa35e16ec14d9aa93187334c8c5560ae5d909745580a5682129f9f9cd8abaa6dca3228274946eb79<br>
+                    7e7e2bbeca2961bc36539dbde219da49267cf0418378a397097778d86cf399e2bf58cd7002c30ce
                 </div>
             </div>
             

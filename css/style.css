@@ -219,12 +219,14 @@ footer {
     background-color: white;
     width: 100%;
     color: black;
+    margin-bottom: 10px;
 }
 
 #footer {
     justify-content: space-evenly;
     display: flex;
     padding: 20px;
+
 }
 
 footer h2 {

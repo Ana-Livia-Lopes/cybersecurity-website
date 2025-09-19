@@ -1,0 +1,34 @@
+# Desativar indexação de diretórios
+Options -Indexes
+
+# Bloquear acesso ao .git
+<FilesMatch "^\.git">
+    Require all denied
+</FilesMatch>
+
+# Headers de segurança
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin"
+Header always set Permissions-Policy "geolocation=(), microphone=()"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+# Proteção contra XSS, clickjacking, etc
+Header always set X-XSS-Protection "1; mode=block"
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin"
+Header always set X-Content-Type-Options "nosniff"
+
+# Bloquear acesso a arquivos sensíveis
+<Files ~ "^\.">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<FilesMatch "\.(env|log|ini|config|sql|bak|backup)$">
+    Require all denied
+</FilesMatch>
+<FilesMatch "\.(bak|backup|inc|sql|tpl|log|ini|conf|config|env)$">
+    Require all denied
+</FilesMatch>

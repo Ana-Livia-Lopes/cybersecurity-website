@@ -187,7 +187,111 @@ a:hover{
     z-index: 1; 
     border: solid 5px rgba(217, 217, 217, 0.886);
 }
+@media (max-width: 768px) {
+    #nav1{
+        display: none;
+    }
+    nav{
+        justify-content:right;
+    }
+    #user-div{
+        margin-right: 20px;
+    }
+    #opt-sair{
+        font-size: 12px;
+        width: 30px;
+    }
+    #botao{
+        display: block;
+    }
+    #checkbox:checked + #botao + #nav2{
+        display: block;
+    }
+    .logo{
+        margin-left: 5%;
+    }
+    #footer {
+        display: block;
+        overflow-wrap: break-word;
+        padding: 25px;
+    }
+    #footer h2{
+        font-size: 24px;
+    }
+    #footer p{
+        font-size: 13px;
+    }
+    .sobre {
+        height: 180px;
+    }
+    .flex a{
+        margin-top: 9px;
+    }
+    .flex p{
+        margin-bottom: 30px;
+    }
+    .fa-solid{
+        font-size: 55px;
+    }
+    #secao1{
+        height: 75vh;
+        
+    }
+    #secao1 h1{
+        font-size: 43px;
+        margin-top: 100px;
+        padding-left: 35px;
+    }
+    #secao1 p{
+        font-size: 17px;
+        padding-left: 40px;
+        margin-top: 20px;
+    }
 
+    
+    .logo-container {
+        position: relative;
+        height: 20%;
+        
+        &:before {
+          content:  "";
+          position: absolute;
+          left: 27%;
+          width:    45%; 
+          height:   4px;
+          background-color: #6daacfff;
+          transform-origin: center center;
+          transform: scaleX(0);
+          
+          animation: line-animation 3s ease forwards; 
+        }
+        
+        h1#page-logo {
+          
+          animation: clip-path-reveal-1 3s ease forwards; 
+        }
+      }
+    @keyframes line-animation {
+    0% { transform: scaleX(0); }
+    15% { transform: scaleX(0); }
+    15%, 20% { transform: scaleX(1.8); top: 0px; } 
+    50% { transform: scaleX(1.8); top: calc(100% + 40px); } 
+    70% { transform: scaleX(0.9); top: calc(100% + 40px); } 
+    80%, 100% { transform: scaleX(0.9); top: calc(100% + 40px); }
+    }
+
+    @keyframes clip-path-reveal-1 {
+    0%, 20% { clip-path: polygon(0 0, 100% 0, 100% 0, 0% 0); } 
+    50%, 100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); } 
+    }
+    .logo-container {
+        height: 11%;
+    }
+    #user{
+        font-size: 10px;
+    }
+
+}
 
 /* fim cabeçalho */
     </style>

@@ -1,15 +1,23 @@
 <?php
 include 'conexao.php';
+header("X-Frame-Options: DENY");
+header("X-Content-Type-Options: nosniff");
+header("Referrer-Policy: strict-origin");
+header("Permissions-Policy: geolocation=(), microphone=()");
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $nome = $_POST["nome"];
-    $email = $_POST["email"];
+    $nome = htmlspecialchars($_POST["nome"], ENT_QUOTES, 'UTF-8');
+    $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
     $senha = $_POST["senha"];
+    
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        die("Email inválido");
+    }
 
     $senha_hashed = password_hash($senha, PASSWORD_DEFAULT);
 
-    $sql_insercao = "INSERT INTO usuarios (nome_usuario, email_usuario, senha_usuario, tipo_usuario) VALUES (?, ?, ?, 'cliente')";
+    $sql_insercao = "INSERT INTO usuarios (nome_usuario, email_usuario, senha_usuario) VALUES (?, ?, ?)";
     $stmt = $conexao->prepare($sql_insercao);
     $stmt->bind_param("sss", $nome, $email, $senha_hashed);
 
@@ -39,9 +47,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/loginecadastro.css">
 </head>
 <body>
+    <a href="./index.php"><?php include('seta.php'); ?></a>
     <section class="secao-cadastro">
         <div class="box-cadastro">
             <form action="" method="POST">

@@ -188,6 +188,8 @@
     </style>
 </head>
 <body>
+    
+    <a href="./index.php"><?php include('seta.php'); ?></a>
     <div class="container">
         <header>
             <h1>CONTEÚDO</h1>
@@ -255,13 +257,13 @@
                 <div class="card-button">Acessar Conteúdo</div>
             </a>
             
-            <a href="brooklyn_nine_nine.html" class="card">
+            <a href="conteudo/hydra.php" class="card">
                 <div class="card-icon">
                     <i class="fas fa-flag"></i>
                 </div>
-                <h3>Brooklyn Nine Nine</h3>
+                <h3>Hydra</h3>
                 <div class="card-content">
-                    <p>Walkthrough da sala do TryHackMe. Siga o passo a passo completo para resolver o CTF com tema da série Brooklyn Nine-Nine.</p>
+                    <p>Ferramenta para teste de penetração. tutorial de utilização da ferramenta explicando onde encontrar as informações</p>
                 </div>
                 <div class="card-button">Acessar Conteúdo</div>
             </a>
