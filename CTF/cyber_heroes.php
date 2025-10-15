@@ -536,7 +536,7 @@
         </section>
         
         <footer>
-            <p>Walkthrough educativo da sala CyberHeroes do TryHackMe | CTF e Pentesting</p>
+            <p>Walkthrough da sala CyberHeroes do TryHackMe </p>
         </footer>
     </div>
 </body>

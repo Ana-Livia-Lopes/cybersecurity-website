@@ -580,7 +580,7 @@
         </section>
         
         <footer>
-            <p>Walkthrough educativo da sala Hydra do TryHackMe | Ataques de força bruta com Hydra</p>
+            <p>Walkthrough da sala Hydra do TryHackMe </p>
         </footer>
     </div>
 </body>

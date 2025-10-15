@@ -520,7 +520,7 @@
             </table>
         </section>
         <footer>
-            <p>Walkthrough educativo da sala Brooklyn Nine Nine do TryHackMe | CTF e Pentesting</p>
+            <p>Walkthrough da sala Brooklyn Nine Nine do TryHackMe </p>
         </footer>
     </div>
 </body>

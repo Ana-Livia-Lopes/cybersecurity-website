@@ -675,7 +675,7 @@
         </section>
         
         <footer>
-            <p>Walkthrough Flow - Documentação do processo de exploração</p>
+            <p>Walkthrough Flow - Documentação </p>
         </footer>
     </div>
 </body>

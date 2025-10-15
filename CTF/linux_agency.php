@@ -915,7 +915,7 @@
         </section>
         
         <footer>
-            <p>Linux Agency - Desafio de Linux e Escalonamento de Privilégios</p>
+            <p>CTF tryhackme Linux Agency </p>
         </footer>
     </div>
 </body>

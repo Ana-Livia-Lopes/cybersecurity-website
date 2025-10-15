@@ -667,7 +667,7 @@
         </section>
         
         <footer>
-            <p>NewCorp - Hacking Club | Walkthrough por [Seu Nome]</p>
+            <p>NewCorp - Hacking Club | Walkthrough </p>
         </footer>
     </div>
 </body>

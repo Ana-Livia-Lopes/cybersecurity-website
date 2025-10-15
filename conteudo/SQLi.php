@@ -222,7 +222,7 @@
     </style>
 </head>
 <body>
-    <a href="../CTF.php"><?php include('../seta.php'); ?></a>
+    <a href="../conteudo.php"><?php include('../seta.php'); ?></a>
     <div class="container">
         <header>
             <h1>SQL INJECTION</h1>

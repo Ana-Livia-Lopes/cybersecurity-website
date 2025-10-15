@@ -647,7 +647,7 @@
         </section>
         
         <footer>
-            <p>Explicação de Comandos - Baseado no PDF "comandos_linked_explicado"</p>
+            <p>Explicação de Comandos CTF linked</p>
         </footer>
     </div>
 </body>
